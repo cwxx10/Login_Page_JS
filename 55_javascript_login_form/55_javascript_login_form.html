@@ -1,0 +1,44 @@
+<head>
+    <link href="/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+    </div>
+
+    <form action="#">
+        <label for="txtUser"><p>Usuario</p></label>
+            <input type="text" id="txtUser" name="user" placeholder="Digite o Usuario" >
+        
+        <label for="txtPass"><p>Senha</p></label>
+            <input type="password" id="txtPass" name="password" placeholder="Digite a Senha">
+        <br><br><hr><br>
+            <div id="btn-container"><button type ="submit" id="btn">Enviar</button></div>
+    </form>
+    
+    <script>
+
+        (function(){
+            'use strict';
+
+            var $form = document.querySelector('form');
+            var $txtUser = document.getElementById('txtUser');
+            var $txtPass = document.getElementById('txtPass');
+            var $btn = document.getElementById('btn');
+
+
+            $form.addEventListener('submit', function(event){
+                if ($txtUser.value === "" || !$txtPass.value) {
+                    alert("Preencha todos os campos.")
+                    event.preventDefault(); //previne evento padrão, não envia o envio do formulario se os campos estiverem vazios
+                } else {
+                    alert("Login concluído!");
+                }
+            })
+
+            
+        })()
+
+    </script>
+
+</body>
